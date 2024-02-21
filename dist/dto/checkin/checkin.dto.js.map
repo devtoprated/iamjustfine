@@ -1,0 +1,1 @@
+{"version":3,"file":"checkin.dto.js","sourceRoot":"","sources":["../../../src/dto/checkin/checkin.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,6CAA8C;AAC9C,qDAAyD;AAEzD,MAAa,UAAU;CAStB;AALG;IAFC,IAAA,qBAAW,EAAC,EAAE,OAAO,EAAE,IAAI,EAAE,CAAC;IAC9B,IAAA,4BAAU,GAAE;;wCACA;AAIb;IAFC,IAAA,qBAAW,EAAC,EAAE,OAAO,EAAE,iBAAiB,EAAE,CAAC;IAC3C,IAAA,4BAAU,GAAE;;0CACE;AARnB,gCASC"}

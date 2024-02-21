@@ -1,0 +1,26 @@
+<% if(typeof message !='undefined' && message.success){ %>
+
+<div class="alert alert-block alert-success">
+  <button type="button" class="close" data-dismiss="alert">
+    <i class="ace-icon fa fa-times"></i>
+  </button>
+  <i class="ace-icon fa fa-check green"></i>
+  <%=messages.success%>
+</div>
+<%}else if(typeof message !='undefined' && message.error){%>
+<!-- <div class="alert alert-block alert-danger">
+  <button type="button" class="close" data-dismiss="alert">
+    <i class="ace-icon fa fa-times"></i>
+  </button>
+  <i class="ace-icon fa fa-close red"></i>
+  <%=message.message%>
+</div> -->
+<div class="alert alert-danger alert-dismissible fade show" role="alert" style="margin-bottom: 10px;">
+  <strong><%=message.message%></strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+  
+</div>
+<%}%>

@@ -1,0 +1,134 @@
+<%- include('../elements/header'); %>
+
+<div class="main-content">
+  <div class="main-content-inner">
+    <div class="page-content">
+      <div class="container-fluid">
+        <div class="container-fluid detailscontainer">
+          <div class="space-6"></div>
+
+          <div class="row classWithPad">
+            <div class="col-sm-6 mb-2">
+              <div class="row classWithPad">
+                <div class="col-xs-4 mb-2">
+                  <p>Name:-</p>
+                </div>
+                <div class="col-xs-8 mb-2"><%= data.name %></div>
+              </div>
+            </div>
+            <div class="col-sm-6 mb-2">
+              <div class="row classWithPad">
+                <div class="col-xs-4 mb-2">
+                  <p>Contact Number:-</p>
+                </div>
+                <div class="col-xs-8 mb-2">
+                  <%= data.dialCode %><%= data.contactNumber %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row classWithPad">
+            <div class="col-sm-6 mb-2">
+              <div class="row classWithPad">
+                <div class="col-xs-4 mb-2">
+                  <p>Is Verified:-</p>
+                </div>
+                <div class="col-xs-8 mb-2"><%= data.isVerified %></div>
+              </div>
+            </div>
+            <div class="col-sm-6 mb-2">
+              <div class="row classWithPad">
+                <div class="col-xs-4 mb-2">
+                  <p>Created At :-</p>
+                </div>
+                <div class="col-xs-8 mb-2">
+                  <%=moment(data.createdAt).format('MM/DD/YYYY')%>
+                </div>
+            </div>
+          </div>
+          <div class="row classWithPad">
+            <div class="col-sm-6 mb-2">
+              <div class="row classWithPad">
+                <div class="col-xs-4 mb-2">
+                  <p>Updated At:-</p>
+                </div>
+                <div class="col-xs-8 mb-2">
+                  <%=moment(data.updatedAt).format('MM/DD/YYYY')%>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <section>
+          <div class="container-fluid detailscontainer caregivercontiner2">
+            
+            <div class="row classWithPad2" >
+                <div class="col-sm-6 mb-2">
+                  <div class="row classWithPad2 text-center headingsgiver " >
+                    <p>careGiver</p>
+                  </div>
+                </div>
+                <div class="col-sm-6 mb-2 text-center">
+                    <div class="row classWithPad2">
+                      <p>careReceiver</p>
+                     
+                    </div>
+                  </div>
+              </div>
+              <div class="row" >
+                <div class="col-sm-6 mb-2" >
+                  <% if(giver[0].length>0){ for(var i=0;i < giver[0].length;i++) { %>
+                    
+                    <div class="userlists">
+                      <span style="display:none"><%=giver[0][i]['careGiver'].id%></span>
+                      <button id="<%=giver[0][i]['careGiver'].id%><%=parseInt( Math.random()*5*i + i)%>" onclick="removelist(this)" ><%=giver[0][i]['careGiver'].name%></button>
+                    </div>
+                    <% } }else{ %>
+                    
+                      <div class="userlists" style="color:red; font-size: 20px;">
+                        <p>No Care Giver Data Found</p>
+                      </div>
+                        <% } %>
+                </div>
+                <div class="col-sm-6 mb-2" >
+                  <% if(receiver[0].length>0){ for(var i=0;i < receiver[0].length;i++) { %>
+                   
+                    <div class="userlists">
+                     <span style="display:none"><%=receiver[0][i]['careReceiver'].id%></span>
+                      <button id="<%=receiver[0][i]['careReceiver'].id%><%=parseInt( Math.random()*5)%>" onclick="removelist(this)"><%=receiver[0][i]['careReceiver'].name%></button>
+                    </div>
+                    <% } }else{ %>
+                    
+                      <div class="userlists" style="color:red; font-size: 20px;">
+                        <p>No Care Receiver Data Found</p>
+                      </div>
+                        <% } %>
+                </div>
+                
+              </div>
+              
+          </div>
+        
+      </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <%- include('../elements/footer'); %>
+  <script>
+    console.log("Hello Here Hey Buddy")
+      function removelist(element){
+   
+          let currentId=element.previousElementSibling.innerText;
+
+          if(currentId){
+    
+         console.log("currentId",currentId)
+     
+        }
+      }
+  </script>
+</div>
+
